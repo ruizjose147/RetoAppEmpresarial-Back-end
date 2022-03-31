@@ -27,6 +27,10 @@ public class VendedorServices {
         return this.vendedorRepositorieI.findById(id);
     }
 
+    public Flux<Vendedor> findByNombreVendedor(String nombre){
+        return this.vendedorRepositorieI.findByVendedorNombre(nombre);
+    }
+
     public Mono<Vendedor> updateVendedor(String id, Vendedor vendedor){
         return this.vendedorRepositorieI.findById(id)
                 .flatMap(v -> {
