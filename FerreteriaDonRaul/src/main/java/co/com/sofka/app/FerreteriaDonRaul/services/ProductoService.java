@@ -27,7 +27,7 @@ public class ProductoService {
         return this.productoRepositorieI.findById(id);
     }
 
-    public Mono<Producto> updateCliente(String id, Producto producto){
+    public Mono<Producto> updateProducto(String id, Producto producto){
         return this.productoRepositorieI.findById(id)
                 .flatMap(p -> {
                     p.setNombreProducto(producto.getNombreProducto());
