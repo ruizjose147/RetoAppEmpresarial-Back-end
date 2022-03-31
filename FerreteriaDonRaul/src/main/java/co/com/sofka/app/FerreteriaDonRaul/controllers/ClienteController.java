@@ -6,6 +6,7 @@ import co.com.sofka.app.FerreteriaDonRaul.services.ClienteServices;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -17,7 +18,7 @@ public class ClienteController {
     private ClienteServices clienteServices;
     private ModelMapper modelMapper;
 
-    public ClienteController(ModelMapper modelMapper) {c
+    public ClienteController(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;
     }
 
@@ -31,6 +32,12 @@ public class ClienteController {
     @GetMapping("/clientes")
     public Flux<ClienteDto> findAll() {
         return this.clienteServices.findAll()
+                .flatMap(c -> Mono.just(modelMapper.map(c, ClienteDto.class)));
+    }
+
+    @GetMapping("/clientebyid/{id}")
+    public Mono<ClienteDto> findById(@PathVariable("id") String id) {
+        return this.clienteServices.findById(id)
                 .flatMap(c -> Mono.just(modelMapper.map(c, ClienteDto.class)));
     }
 }

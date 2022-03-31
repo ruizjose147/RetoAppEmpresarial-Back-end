@@ -22,4 +22,8 @@ public class ClienteServices {
     public Flux<Cliente> findAll() {
         return this.clienteRepositorieI.findAll();
     }
+
+    public Mono<Cliente> findById(String id){
+        return this.clienteRepositorieI.findById(id);
+    }
 }
