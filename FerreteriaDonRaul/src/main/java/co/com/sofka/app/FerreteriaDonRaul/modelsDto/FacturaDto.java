@@ -17,10 +17,10 @@ import java.util.List;
 @Data
 public class FacturaDto {
 
-    Integer facturaId;
-    LocalDate fechaFactura;
-    String nombreVendedor;
-    String nombreCliente;
-    List<Producto> productosVendidos;
-    Integer totalFactura;
+    private String facturaId;
+    private LocalDate fechaFactura;
+    private String nombreVendedor;
+    private String nombreCliente;
+    private List<Producto> productosVendidos;
+    private Integer totalFactura;
 }

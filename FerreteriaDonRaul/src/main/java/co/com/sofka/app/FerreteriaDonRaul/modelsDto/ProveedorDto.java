@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class ProveedorDto {
 
-    String proveedorId;
-    String nombreProveedor;
-    String celularProveedor;
+    private String proveedorId;
+    private String nombreProveedor;
+    private String celularProveedor;
 }

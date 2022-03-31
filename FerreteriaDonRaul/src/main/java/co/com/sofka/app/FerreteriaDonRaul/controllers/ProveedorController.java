@@ -18,8 +18,8 @@ import reactor.core.publisher.Mono;
 public class ProveedorController {
 
     @Autowired
-    private ProveedorServices proveedorServices;
-    private ModelMapper modelMapper;
+    ProveedorServices proveedorServices;
+    ModelMapper modelMapper;
 
     public ProveedorController(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;
@@ -51,7 +51,7 @@ public class ProveedorController {
     }
 
     @DeleteMapping("/proveedor/{id}")
-    private Mono<ResponseEntity<Proveedor>> delete(@PathVariable("id") String id) {
+    public Mono<ResponseEntity<Proveedor>> delete(@PathVariable("id") String id) {
         return this.proveedorServices.delete(id)
                 .flatMap(p -> Mono.just(ResponseEntity.ok(p)))
                 .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));

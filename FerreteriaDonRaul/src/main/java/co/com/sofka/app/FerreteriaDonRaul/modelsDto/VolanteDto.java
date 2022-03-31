@@ -17,9 +17,9 @@ import java.util.HashMap;
 @Data
 public class VolanteDto {
 
-    String volanteId;
-    String nombreProveedor;
-    LocalDate fechaVolante;
-    String cedulaProveedor;
-    HashMap<Producto, Integer> productosVolante;
+    private String volanteId;
+    private String nombreProveedor;
+    private LocalDate fechaVolante;
+    private String cedulaProveedor;
+    private HashMap<String, Integer> productosVolante;
 }

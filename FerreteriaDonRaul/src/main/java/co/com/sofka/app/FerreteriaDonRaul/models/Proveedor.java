@@ -3,6 +3,7 @@ package co.com.sofka.app.FerreteriaDonRaul.models;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,8 +16,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Proveedor {
 
     @Id
-    String proveedorId;
-    String nombreProveedor;
-    String celularProveedor;
+    private String proveedorId;
+    private String nombreProveedor;
+    private String celularProveedor;
 
 }

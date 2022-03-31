@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class ProductoDto {
 
-    String idProducto;
-    String nombreProducto;
-    Integer precioProducto;
-    String proveedorId;
+    private String idProducto;
+    private String nombreProducto;
+    private Double precioProducto;
+    private String proveedorId;
 }

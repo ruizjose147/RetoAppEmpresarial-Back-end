@@ -3,6 +3,8 @@ package co.com.sofka.app.FerreteriaDonRaul.models;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
@@ -16,11 +18,12 @@ import java.util.List;
 @Document(collection = "facturas")
 public class Factura {
 
-    Integer facturaId;
-    LocalDate fechaFactura;
-    String nombreVendedor;
-    String nombreCliente;
-    List<Producto> productosVendidos;
-    Integer totalFactura;
+    @Id
+    private String facturaId;
+    private LocalDate fechaFactura;
+    private  String nombreVendedor;
+    private String nombreCliente;
+    private List<Producto> productosVendidos;
+    private Integer totalFactura;
 
 }

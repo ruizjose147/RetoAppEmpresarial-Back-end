@@ -15,8 +15,8 @@ import reactor.core.publisher.Mono;
 public class ClienteController {
 
     @Autowired
-    private ClienteServices clienteServices;
-    private ModelMapper modelMapper;
+    ClienteServices clienteServices;
+    ModelMapper modelMapper;
 
     public ClienteController(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;
@@ -41,6 +41,12 @@ public class ClienteController {
                 .flatMap(c -> Mono.just(modelMapper.map(c, ClienteDto.class)));
     }
 
+    @GetMapping("/cliente/cedula/{cedula}")
+    public Flux<ClienteDto> findByCedula(@PathVariable("cedula") String cedula){
+        return this.clienteServices.findByCedula(cedula)
+                .flatMap(c -> Mono.just(modelMapper.map(c, ClienteDto.class)));
+    }
+
     @PutMapping("/cleinte/{id}")
     public Mono<Cliente> updateCliente(@PathVariable("id") String id, ClienteDto clienteDto){
          Cliente cliente = modelMapper.map(clienteDto, Cliente.class);
@@ -48,7 +54,7 @@ public class ClienteController {
     }
 
     @DeleteMapping("/cliente/{id}")
-    private Mono<ResponseEntity<Cliente>> delete(@PathVariable("id") String id) {
+    public Mono<ResponseEntity<Cliente>> delete(@PathVariable("id") String id) {
         return this.clienteServices.delete(id)
                 .flatMap(c -> Mono.just(ResponseEntity.ok(c)))
                 .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));

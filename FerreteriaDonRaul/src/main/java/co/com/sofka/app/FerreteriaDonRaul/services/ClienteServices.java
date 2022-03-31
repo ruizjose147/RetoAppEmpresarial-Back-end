@@ -27,6 +27,10 @@ public class ClienteServices {
         return this.clienteRepositorieI.findById(id);
     }
 
+    public Flux<Cliente> findByCedula(String cedula){
+        return this.clienteRepositorieI.findByCedulaCliente(cedula);
+    }
+
     public Mono<Cliente> updateCliente(String id, Cliente cliente){
         return this.clienteRepositorieI.findById(id)
                 .flatMap(c -> {

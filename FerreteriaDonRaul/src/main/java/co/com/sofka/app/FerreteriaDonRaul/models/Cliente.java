@@ -3,6 +3,7 @@ package co.com.sofka.app.FerreteriaDonRaul.models;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,8 +16,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Cliente {
 
     @Id
-    String idCliente;
-    String nombreCliente;
-    String celularCliente;
-    String cedulaCliente;
+    private String idCliente;
+    private  String nombreCliente;
+    private String celularCliente;
+    private String cedulaCliente;
 }

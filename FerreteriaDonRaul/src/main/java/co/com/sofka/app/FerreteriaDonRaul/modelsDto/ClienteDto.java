@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class ClienteDto {
 
-    String idCliente;
-    String nombreCliente;
-    String celularCliente;
-    String cedulaCliente;
+    private String idCliente;
+    private String nombreCliente;
+    private String celularCliente;
+    private String cedulaCliente;
 }
