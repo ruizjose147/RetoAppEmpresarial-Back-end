@@ -1,9 +1,12 @@
 package co.com.sofka.app.FerreteriaDonRaul.modelsDto;
 
+import co.com.sofka.app.FerreteriaDonRaul.models.Producto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
+import java.util.HashMap;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -11,10 +14,8 @@ import lombok.NoArgsConstructor;
 @lombok.Setter
 @EqualsAndHashCode
 @Data
-public class ProductoDto {
+public class InvantarioDto {
 
-    String idProducto;
-    String nombreProducto;
-    Integer precioProducto;
-    String proveedorId;
+    String inventarioId;
+    HashMap<Producto, Integer> producto;
 }

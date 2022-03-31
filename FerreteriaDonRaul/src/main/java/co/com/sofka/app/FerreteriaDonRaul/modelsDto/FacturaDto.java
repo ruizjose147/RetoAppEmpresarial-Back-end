@@ -1,9 +1,10 @@
-package co.com.sofka.app.FerreteriaDonRaul.models;
+package co.com.sofka.app.FerreteriaDonRaul.modelsDto;
 
+import co.com.sofka.app.FerreteriaDonRaul.models.Producto;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -13,8 +14,8 @@ import java.util.List;
 @lombok.Getter
 @lombok.Setter
 @EqualsAndHashCode
-@Document(collection = "facturas")
-public class Factura {
+@Data
+public class FacturaDto {
 
     Integer facturaId;
     LocalDate fechaFactura;
@@ -22,5 +23,4 @@ public class Factura {
     String nombreCliente;
     List<Producto> productosVendidos;
     Integer totalFactura;
-
 }

@@ -1,9 +1,10 @@
-package co.com.sofka.app.FerreteriaDonRaul.models;
+package co.com.sofka.app.FerreteriaDonRaul.modelsDto;
 
+import co.com.sofka.app.FerreteriaDonRaul.models.Producto;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -13,8 +14,8 @@ import java.util.HashMap;
 @lombok.Getter
 @lombok.Setter
 @EqualsAndHashCode
-@Document(collection = "volantes")
-public class Volante {
+@Data
+public class VolanteDto {
 
     String volanteId;
     String nombreProveedor;
