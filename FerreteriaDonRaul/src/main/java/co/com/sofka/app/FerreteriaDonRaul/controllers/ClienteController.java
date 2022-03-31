@@ -35,9 +35,22 @@ public class ClienteController {
                 .flatMap(c -> Mono.just(modelMapper.map(c, ClienteDto.class)));
     }
 
-    @GetMapping("/clientebyid/{id}")
+    @GetMapping("/cliente/{id}")
     public Mono<ClienteDto> findById(@PathVariable("id") String id) {
         return this.clienteServices.findById(id)
                 .flatMap(c -> Mono.just(modelMapper.map(c, ClienteDto.class)));
+    }
+
+    @PutMapping("/cleinte/{id}")
+    public Mono<Cliente> updateCliente(@PathVariable("id") String id, ClienteDto clienteDto){
+         Cliente cliente = modelMapper.map(clienteDto, Cliente.class);
+         return this.clienteServices.updateCliente(id, cliente);
+    }
+
+    @DeleteMapping("/cliente/{id}")
+    private Mono<ResponseEntity<Cliente>> delete(@PathVariable("id") String id) {
+        return this.clienteServices.delete(id)
+                .flatMap(c -> Mono.just(ResponseEntity.ok(c)))
+                .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
     }
 }

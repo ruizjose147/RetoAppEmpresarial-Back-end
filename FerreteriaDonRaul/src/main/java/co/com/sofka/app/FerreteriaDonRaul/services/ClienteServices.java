@@ -26,4 +26,22 @@ public class ClienteServices {
     public Mono<Cliente> findById(String id){
         return this.clienteRepositorieI.findById(id);
     }
+
+    public Mono<Cliente> updateCliente(String id, Cliente cliente){
+        return this.clienteRepositorieI.findById(id)
+                .flatMap(c -> {
+                    c.setNombreCliente(cliente.getNombreCliente());
+                    c.setCelularCliente(cliente.getCelularCliente());
+                    c.setCedulaCliente(cliente.getCedulaCliente());
+                    return save(c);
+                })
+                .switchIfEmpty(Mono.empty());
+    }
+
+    public Mono<Cliente> delete(String id) {
+        return this.clienteRepositorieI
+                .findById(id)
+                .flatMap(p -> this.clienteRepositorieI.deleteById(p.getIdCliente())
+                .thenReturn(p));
+    }
 }
