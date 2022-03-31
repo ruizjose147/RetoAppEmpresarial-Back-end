@@ -20,10 +20,15 @@ public class Factura {
 
     @Id
     private String facturaId;
+    @NonNull
     private LocalDate fechaFactura;
+    @NonNull
     private  String nombreVendedor;
+    @NonNull
     private String nombreCliente;
+    @NonNull
     private List<Producto> productosVendidos;
+    @NonNull
     private Integer totalFactura;
 
 }

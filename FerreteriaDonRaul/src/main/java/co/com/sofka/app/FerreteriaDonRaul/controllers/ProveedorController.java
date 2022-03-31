@@ -44,6 +44,12 @@ public class ProveedorController {
                 .flatMap(p -> Mono.just(modelMapper.map(p, ProveedorDto.class)));
     }
 
+    @GetMapping("/proveedor/nombre/{nombre}")
+    public Flux<ProveedorDto> findByNombreProveedor(String nombre){
+        return this.proveedorServices.findByNombreProveedor(nombre)
+                .flatMap(p -> Mono.just(modelMapper.map(p, ProveedorDto.class)));
+    }
+
     @PutMapping("/proveedor/{id}")
     public Mono<Proveedor> updateProveedor(@PathVariable("id") String id, ProveedorDto proveedorDto){
         Proveedor proveedor = modelMapper.map(proveedorDto, Proveedor.class);

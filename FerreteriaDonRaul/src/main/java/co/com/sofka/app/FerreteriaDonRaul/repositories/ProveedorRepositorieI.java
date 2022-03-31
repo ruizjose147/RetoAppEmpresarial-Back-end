@@ -8,5 +8,5 @@ import reactor.core.publisher.Flux;
 
 @Repository
 public interface ProveedorRepositorieI extends ReactiveMongoRepository<Proveedor, String> {
-    //public Flux<Proveedor> findByCedulaProveedor(String cedula);
+    public Flux<Proveedor> findByNombreProveedor(String nombre);
 }

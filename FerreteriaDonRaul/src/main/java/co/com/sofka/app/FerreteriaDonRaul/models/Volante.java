@@ -20,8 +20,12 @@ public class Volante {
 
     @Id
     private String volanteId;
+    @NonNull
     private String nombreProveedor;
+    @NonNull
     private LocalDate fechaVolante;
+    @NonNull
     private String cedulaProveedor;
+    @NonNull
     private HashMap<String, Integer> productosVolante;
 }

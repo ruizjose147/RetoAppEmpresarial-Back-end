@@ -17,7 +17,10 @@ public class Cliente {
 
     @Id
     private String idCliente;
+    @NonNull
     private  String nombreCliente;
+    @NonNull
     private String celularCliente;
+    @NonNull
     private String cedulaCliente;
 }

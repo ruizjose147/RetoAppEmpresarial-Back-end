@@ -17,7 +17,9 @@ public class Proveedor {
 
     @Id
     private String proveedorId;
+    @NonNull
     private String nombreProveedor;
+    @NonNull
     private String celularProveedor;
 
 }

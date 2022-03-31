@@ -17,7 +17,10 @@ public class Vendedor {
 
     @Id
     private String vendedorId;
+    @NonNull
     private String vendedorNombre;
+    @NonNull
     private String vendedorCelular;
+    @NonNull
     private String vendedorCedula;
 }
