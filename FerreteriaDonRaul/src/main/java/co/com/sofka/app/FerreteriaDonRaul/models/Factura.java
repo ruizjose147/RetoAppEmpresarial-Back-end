@@ -20,7 +20,7 @@ public class Factura {
 
     @Id
     private String facturaId;
-    @NonNull
+    private Long consecutivo;
     private LocalDate fechaFactura;
     @NonNull
     private  String nombreVendedor;

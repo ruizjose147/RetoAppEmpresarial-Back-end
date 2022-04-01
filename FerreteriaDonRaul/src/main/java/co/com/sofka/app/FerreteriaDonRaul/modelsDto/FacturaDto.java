@@ -18,6 +18,7 @@ import java.util.List;
 public class FacturaDto {
 
     private String facturaId;
+    private Long consecutivo;
     private LocalDate fechaFactura;
     private String nombreVendedor;
     private String nombreCliente;
