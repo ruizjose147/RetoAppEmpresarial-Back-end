@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @lombok.Getter
 @lombok.Setter
 @EqualsAndHashCode
-@Document(collection = "productos")
+@Document(collection = "inventario")
 public class Producto {
     
     @Id
@@ -20,7 +20,10 @@ public class Producto {
     @NonNull
     private String nombreProducto;
     @NonNull
+    private Integer cantidad;
+    @NonNull
     private Double precioProducto;
     @NonNull
     private String proveedorId;
+
 }
