@@ -22,7 +22,6 @@ public class Volante {
     private String volanteId;
     @NonNull
     private String nombreProveedor;
-    @NonNull
     private LocalDate fechaVolante;
     @NonNull
     private String cedulaProveedor;
