@@ -1,10 +1,7 @@
 package co.com.sofka.app.FerreteriaDonRaul.controllers;
 
-import co.com.sofka.app.FerreteriaDonRaul.models.Producto;
 import co.com.sofka.app.FerreteriaDonRaul.models.Proveedor;
-import co.com.sofka.app.FerreteriaDonRaul.modelsDto.ProductoDto;
 import co.com.sofka.app.FerreteriaDonRaul.modelsDto.ProveedorDto;
-import co.com.sofka.app.FerreteriaDonRaul.services.ProductoService;
 import co.com.sofka.app.FerreteriaDonRaul.services.ProveedorServices;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
