@@ -27,6 +27,10 @@ public class ProductoService {
         return this.productoRepositorieI.findById(id);
     }
 
+    public Flux<Producto> findByNombreProducto(String nombre){
+        return this.productoRepositorieI.findByNombreProducto(nombre);
+    }
+
     public Mono<Producto> updateProducto(String id, Producto producto){
         return this.productoRepositorieI.findById(id)
                 .flatMap(p -> {

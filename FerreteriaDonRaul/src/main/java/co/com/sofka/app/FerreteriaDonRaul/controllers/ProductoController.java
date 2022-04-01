@@ -41,6 +41,12 @@ public class ProductoController {
                 .flatMap(p -> Mono.just(modelMapper.map(p, ProductoDto.class)));
     }
 
+    @GetMapping("producto/nombre/{nombre}")
+    public Flux<ProductoDto> findByNombreProducto(String nombre){
+        return this.productoService.findByNombreProducto(nombre)
+                .flatMap(p -> Mono.just(modelMapper.map(p, ProductoDto.class)));
+    }
+
     @PutMapping("/producto/{id}")
     public Mono<Producto> updateProducto(@PathVariable("id") String id, ProductoDto productoDto){
         Producto producto = modelMapper.map(productoDto, Producto.class);
