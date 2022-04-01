@@ -1,6 +1,5 @@
 package co.com.sofka.app.FerreteriaDonRaul.modelsDto;
 
-import co.com.sofka.app.FerreteriaDonRaul.models.Producto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
