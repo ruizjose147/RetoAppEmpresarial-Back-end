@@ -1,6 +1,5 @@
 package co.com.sofka.app.FerreteriaDonRaul.services;
 
-import co.com.sofka.app.FerreteriaDonRaul.models.Cliente;
 import co.com.sofka.app.FerreteriaDonRaul.models.Factura;
 import co.com.sofka.app.FerreteriaDonRaul.repositories.FacturaRepositorieI;
 import org.springframework.beans.factory.annotation.Autowired;
