@@ -29,13 +29,18 @@ public class VendedorServices {
         return this.vendedorRepositorieI.findByVendedorNombre(nombre);
     }
 
+    public Mono<Vendedor> findByCorreoVendedor(String correo){
+        return this.vendedorRepositorieI.findByVendedorCorreo(correo);
+    }
+
     public Mono<Vendedor> updateVendedor(String id, Vendedor vendedor){
         return this.vendedorRepositorieI.findById(id)
                 .flatMap(v -> {
                     v.setVendedorId(vendedor.getVendedorId());
                     v.setVendedorNombre(vendedor.getVendedorNombre());
-                    v.setVendedorCelular(vendedor.getVendedorCelular());
+                    v.setVendedorCorreo(vendedor.getVendedorCorreo());
                     v.setVendedorCedula(vendedor.getVendedorCedula());
+                    v.setVendedorPassword(vendedor.getVendedorPassword());
                     return save(v);
                 })
                 .switchIfEmpty(Mono.empty());

@@ -47,6 +47,12 @@ public class VendedorController {
                 .flatMap(v -> Mono.just(modelMapper.map(v, VendedorDto.class)));
     }
 
+    @GetMapping("vendedor/correo/{correo}")
+    public Mono<VendedorDto> findByCorreoVendedor(@PathVariable("correo") String correo){
+        return this.vendedorServices.findByCorreoVendedor(correo)
+                .flatMap(v -> Mono.just(modelMapper.map(v, VendedorDto.class)));
+    }
+
     @PutMapping("/vendedor/{id}")
     public Mono<Vendedor> updateVendedor(@PathVariable("id") String id, VendedorDto vendedorDto){
         Vendedor vendedor = modelMapper.map(vendedorDto, Vendedor.class);
