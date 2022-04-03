@@ -12,6 +12,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class VendedorController {
 
     @Autowired
@@ -44,12 +45,6 @@ public class VendedorController {
     @GetMapping("vendedor/nombre/{nombre}")
     public Flux<VendedorDto> findByNombreVendedor(@PathVariable("nombre") String nombre){
         return this.vendedorServices.findByNombreVendedor(nombre)
-                .flatMap(v -> Mono.just(modelMapper.map(v, VendedorDto.class)));
-    }
-
-    @GetMapping("vendedor/correo/{correo}")
-    public Mono<VendedorDto> findByCorreoVendedor(@PathVariable("correo") String correo){
-        return this.vendedorServices.findByCorreoVendedor(correo)
                 .flatMap(v -> Mono.just(modelMapper.map(v, VendedorDto.class)));
     }
 

@@ -9,5 +9,4 @@ import reactor.core.publisher.Mono;
 @Repository
 public interface VendedorRepositorieI extends ReactiveMongoRepository<Vendedor, String> {
     public Flux<Vendedor> findByVendedorNombre(String nombre);
-    public Mono<Vendedor> findByVendedorCorreo(String correo);
 }

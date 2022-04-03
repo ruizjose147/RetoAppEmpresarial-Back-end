@@ -20,9 +20,5 @@ public class Vendedor {
     @NonNull
     private String vendedorNombre;
     @NonNull
-    private String vendedorCorreo;
-    @NonNull
-    private String vendedorPassword;
-    @NonNull
     private String vendedorCedula;
 }

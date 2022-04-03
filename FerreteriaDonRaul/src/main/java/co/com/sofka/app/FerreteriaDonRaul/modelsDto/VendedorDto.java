@@ -12,7 +12,5 @@ public class VendedorDto {
 
     private String vendedorId;
     private String vendedorNombre;
-    private String vendedorCorreo;
-    private String vendedorPassword;
     private String vendedorCedula;
 }
