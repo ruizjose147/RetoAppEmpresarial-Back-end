@@ -13,6 +13,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
+@RequestMapping("/producto")
 public class ProductoController {
 
     @Autowired
